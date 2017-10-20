@@ -50,9 +50,9 @@ namespace perceptron.Source
 				}
 			}
 			
-			Console.WriteLine("Output: {0}, h0input: {1}, h1input: {2}", output, h0input, h1input);
-			Console.WriteLine("{0}, {1}, {2}, {3}", inputWeights[0, 0], inputWeights[0, 1], inputWeights[1, 0], inputWeights[1, 1] );
-			Console.WriteLine("{0}, {1}", hiddenWeights[0], hiddenWeights[1]);
+//			Console.WriteLine("Output: {0}, h0input: {1}, h1input: {2}", output, h0input, h1input);
+//			Console.WriteLine("{0}, {1}, {2}, {3}", inputWeights[0, 0], inputWeights[0, 1], inputWeights[1, 0], inputWeights[1, 1] );
+//			Console.WriteLine("{0}, {1}", hiddenWeights[0], hiddenWeights[1]);
 
 			return correct;
 		}
