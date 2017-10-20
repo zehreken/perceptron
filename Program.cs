@@ -9,7 +9,11 @@ namespace perceptron
 		public static void Main(string[] args)
 		{
 			var simple = new SimplePerceptron();
-			simple.Train(new int[] {1, 1}, 1, 100);
+			simple.Train(new [] {1, 1}, 1, 100);
+			
+			
+			var xorGate = new XorGate();
+			xorGate.Train(new [] {0, 0}, 1, 1000);
 		}
 	}
 }

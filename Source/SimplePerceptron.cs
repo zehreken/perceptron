@@ -5,14 +5,12 @@ namespace perceptron.Source
 	public class SimplePerceptron
 	{
 		private float[] weights;
-		private float outputLayer;
 		private const float learningRate = 0.1f;
 		private float threshold = 0.5f;
 
 		public SimplePerceptron()
 		{
 			weights = new float[2];
-			outputLayer = 0f;
 		}
 
 		public void Step()
