@@ -1,17 +1,15 @@
 ﻿using System;
-using System.Diagnostics;
-using System.Runtime.InteropServices.WindowsRuntime;
 
 namespace perceptron.Source
 {
-	public class Simple
+	public class SimplePerceptron
 	{
 		private float[] weights;
 		private float outputLayer;
 		private const float learningRate = 0.1f;
 		private float threshold = 0.5f;
 
-		public Simple()
+		public SimplePerceptron()
 		{
 			weights = new float[2];
 			outputLayer = 0f;
@@ -23,6 +21,7 @@ namespace perceptron.Source
 
 		public void Train(int[] input, int desiredValue, int stepCount)
 		{
+			int output = 0;
 			for (int step = 0; step < stepCount; step++)
 			{
 				float sum = 0f;
@@ -31,7 +30,7 @@ namespace perceptron.Source
 					sum += input[i] * weights[i];
 				}
 
-				int output = sum >= threshold ? 1 : 0;
+				output = sum >= threshold ? 1 : 0;
 				bool correct = output == desiredValue;
 
 				if (!correct)
@@ -52,7 +51,7 @@ namespace perceptron.Source
 
 			for (int i = 0; i < weights.Length; i++)
 			{
-				Console.WriteLine("Weight{0}: {1}", i, weights[i]);
+				Console.WriteLine("Weight{0}: {1}, Output: {2}", i, weights[i], output);
 			}
 		}
 	}
