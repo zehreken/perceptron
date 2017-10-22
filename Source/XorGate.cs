@@ -7,21 +7,20 @@ namespace perceptron.Source
 		private double[,] inputWeights;
 		private double[] hiddenWeights;
 		private const float learningRate = 0.02f;
-		private float threshold = 0.5f;
-		private float[] hiddenBias;
-		private float outputBias;
+		private double threshold = 0.5;
+		private double[] hiddenBias;
+		private double outputBias;
 		
 		public XorGate()
 		{
 			inputWeights = new double[2, 2];
 			hiddenWeights = new double[2];
-			hiddenBias = new float[2];
-			outputBias = 0.3f;
+			hiddenBias = new double[2];
 		}
 
 		public bool Step(int[] input, int desiredValue)
 		{
-			int output = 0;
+			double output = 0;
 			double sum0 = input[0] * inputWeights[0, 0] + input[1] * inputWeights[1, 0] + hiddenBias[0]; // first hidden node
 //			int h0input = sum0 >= threshold ? 1 : 0;
 			double h0input = Sigmoid(sum0);
@@ -31,7 +30,7 @@ namespace perceptron.Source
 			double h1input = Sigmoid(sum1);
 			
 			double sum = h0input * hiddenWeights[0] + h1input * hiddenWeights[1] + outputBias;
-			output = sum >= threshold ? 1 : 0;
+			output = Sigmoid(sum);
 			bool correct = output == desiredValue;
 
 			if (!correct)
@@ -49,18 +48,19 @@ namespace perceptron.Source
 				if (h0input > 0)
 				{
 					hiddenWeights[0] += (desiredValue - output) * learningRate;
-					hiddenBias[0] += (desiredValue - output) / 10f;
+					hiddenBias[0] += (desiredValue - output);
 				}
 				if (h1input > 0)
 				{
 					hiddenWeights[1] += (desiredValue - output) * learningRate;
-					hiddenBias[1] += (desiredValue - output) / 10f;
+					hiddenBias[1] += (desiredValue - output);
 				}
 			}
 			
 			Console.WriteLine("output: {0}, h0input: {1}, h1input: {2}, desired: {3}", output, h0input, h1input, desiredValue);
 			Console.WriteLine("{0}, {1}, {2}, {3}", inputWeights[0, 0], inputWeights[0, 1], inputWeights[1, 0], inputWeights[1, 1] );
-			Console.WriteLine("{0}, {1}", hiddenWeights[0], hiddenWeights[1]);
+			Console.WriteLine("{0}, {1}, {2}, {3}", hiddenWeights[0], hiddenWeights[1], hiddenBias[0], hiddenBias[1]);
+			Console.WriteLine("=====");
 
 			return correct;
 		}
@@ -77,17 +77,19 @@ namespace perceptron.Source
 			
 		}
 
-		public int Use(int[] input)
+		public double Use(int[] input)
 		{
-			int output = 0;
-			double sum0 = input[0] * inputWeights[0, 0] + input[1] * inputWeights[1, 0]; // first hidden node
-			double h0input = sum0 >= threshold ? 1 : 0;	
-
-			double sum1 = input[0] * inputWeights[0, 1] + input[1] * inputWeights[1, 1]; // second hidden node
-			double h1input = sum1 >= threshold ? 1 : 0;
-
-			double sum = h0input * hiddenWeights[0] + h1input * hiddenWeights[1];
-			output = sum >= threshold ? 1 : 0;
+			double output = 0;
+			double sum0 = input[0] * inputWeights[0, 0] + input[1] * inputWeights[1, 0] + hiddenBias[0]; // first hidden node
+//			int h0input = sum0 >= threshold ? 1 : 0;
+			double h0input = Sigmoid(sum0);
+			
+			double sum1 = input[0] * inputWeights[0, 1] + input[1] * inputWeights[1, 1] + hiddenBias[1]; // second hidden node
+//			int h1input = sum1 >= threshold ? 1 : 0;
+			double h1input = Sigmoid(sum1);
+			
+			double sum = h0input * hiddenWeights[0] + h1input * hiddenWeights[1] + outputBias;
+			output = Sigmoid(sum);
 
 			return output;
 		}
