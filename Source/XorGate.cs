@@ -24,14 +24,14 @@ namespace perceptron.Source
 		{
 			double output;
 			double sum0 = input[0] * inputWeights[0, 0] + input[1] * inputWeights[1, 0] + hiddenBias[0]; // first hidden node
-			double h0input = Utility.Sigmoid(sum0);
+			double h0input = Utility.SigmoidF(sum0);
 			
 			double sum1 = input[0] * inputWeights[0, 1] + input[1] * inputWeights[1, 1] + hiddenBias[1]; // second hidden node
-			double h1input = Utility.Sigmoid(sum1);
+			double h1input = Utility.SigmoidF(sum1);
 			
 			double sum = h0input * hiddenWeights[0] + h1input * hiddenWeights[1] + outputBias;
 //			output = Math.Abs(desiredValue - Sigmoid(sum)) < error ? 1 : 0;
-			output = Utility.Sigmoid(sum);
+			output = Utility.SigmoidF(sum);
 			bool correct = output == desiredValue;
 
 			if (!correct)
@@ -83,13 +83,13 @@ namespace perceptron.Source
 		{
 			double output;
 			double sum0 = input[0] * inputWeights[0, 0] + input[1] * inputWeights[1, 0] + hiddenBias[0]; // first hidden node
-			double h0input = Utility.Sigmoid(sum0);
+			double h0input = Utility.SigmoidF(sum0);
 			
 			double sum1 = input[0] * inputWeights[0, 1] + input[1] * inputWeights[1, 1] + hiddenBias[1]; // second hidden node
-			double h1input = Utility.Sigmoid(sum1);
+			double h1input = Utility.SigmoidF(sum1);
 			
 			double sum = h0input * hiddenWeights[0] + h1input * hiddenWeights[1] + outputBias;
-			output = Utility.Sigmoid(sum);
+			output = Utility.SigmoidF(sum);
 
 			return output;
 		}

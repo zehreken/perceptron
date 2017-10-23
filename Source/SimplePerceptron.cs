@@ -4,25 +4,25 @@ namespace perceptron.Source
 {
 	public class SimplePerceptron
 	{
-		private float[] weights;
-		private const float learningRate = 0.1f;
-		private float threshold = 0.5f;
+		private double[] weights;
+		private const double learningRate = 0.1;
+		private double threshold = 0.5f;
 
 		public SimplePerceptron()
 		{
-			weights = new float[2];
+			weights = new double[2];
 		}
 
 		public bool Step(int[] input, int desiredValue)
 		{
 			int output = 0;
-			float sum = 0f;
+			double sum = 0;
 			for (int i = 0; i < weights.Length; i++)
 			{
 				sum += input[i] * weights[i];
 			}
 
-			output = sum >= threshold ? 1 : 0;
+			output = Utility.StepF(sum, threshold);
 			bool correct = output == desiredValue;
 
 			if (!correct)
@@ -53,13 +53,13 @@ namespace perceptron.Source
 		public int Use(int[] input)
 		{
 			int output = 0;
-			float sum = 0f;
+			double sum = 0f;
 			for (int i = 0; i < weights.Length; i++)
 			{
 				sum += input[i] * weights[i];
 			}
 
-			output = sum >= threshold ? 1 : 0;
+			output = Utility.StepF(sum, threshold);
 			return output;
 		}
 	}
