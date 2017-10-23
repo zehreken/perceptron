@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 
 namespace perceptron.Source
 {
@@ -6,7 +7,7 @@ namespace perceptron.Source
 	{
 		private double[] weights;
 		private const double learningRate = 0.1;
-		private const double errorMargin = 0.0001;
+		private const double errorMargin = 0.01;
 
 		public SigmoidPerceptron()
 		{
@@ -16,7 +17,7 @@ namespace perceptron.Source
 		private bool Step(int[] input, int desiredValue)
 		{
 			double output;
-			double sum;
+			double sum = 0;
 			for (int i = 0; i < weights.Length; i++)
 			{
 				sum += input[i] * weights[i];

@@ -7,9 +7,11 @@ namespace perceptron
 	{
 		public static void Main(string[] args)
 		{
-//			TrainAndUseAndGate();
-//			TrainAndUseOrGate();
-			TrainAndUseXorGate();
+			TrainAndUseAndGate();
+			TrainAndUseOrGate();
+			TrainAndUseAndGateSigmoid();
+			TrainAndUseOrGateSigmoid();
+//			TrainAndUseXorGate();
 		}
 
 		private static void TrainAndUseAndGate()
@@ -44,10 +46,10 @@ namespace perceptron
 		{
 			Console.WriteLine("Sigmoid AND Gate");
 			var andGate = new SigmoidPerceptron();
-			andGate.Train(new [] {0, 0}, 0, 100);
-			andGate.Train(new [] {0, 1}, 0, 100);
-			andGate.Train(new [] {1, 0}, 0, 100);
-			andGate.Train(new [] {1, 1}, 1, 100);
+			andGate.Train(new [] {0, 0}, 0, 1000);
+			andGate.Train(new [] {0, 1}, 0, 1000);
+			andGate.Train(new [] {1, 0}, 0, 1000);
+			andGate.Train(new [] {1, 1}, 1, 1000);
 			Console.WriteLine(andGate.Use(new[] {0, 0}));
 			Console.WriteLine(andGate.Use(new[] {0, 1}));
 			Console.WriteLine(andGate.Use(new[] {1, 0}));
@@ -58,10 +60,10 @@ namespace perceptron
 		{
 			Console.WriteLine("Sigmoid OR Gate");
 			var orGate = new SigmoidPerceptron();
-			orGate.Train(new [] {0, 0}, 0, 100);
-			orGate.Train(new [] {0, 1}, 1, 100);
-			orGate.Train(new [] {1, 0}, 1, 100);
-			orGate.Train(new [] {1, 1}, 1, 100);
+			orGate.Train(new [] {0, 0}, 0, 10000);
+			orGate.Train(new [] {0, 1}, 1, 10000);
+			orGate.Train(new [] {1, 0}, 1, 10000);
+			orGate.Train(new [] {1, 1}, 1, 10000);
 			Console.WriteLine(orGate.Use(new[] {0, 0}));
 			Console.WriteLine(orGate.Use(new[] {0, 1}));
 			Console.WriteLine(orGate.Use(new[] {1, 0}));
