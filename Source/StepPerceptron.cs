@@ -11,7 +11,7 @@
 			weights = new double[2];
 		}
 
-		private bool Step(int[] input, int desiredValue)
+		public bool Step(int[] input, int desiredValue)
 		{
 			int output;
 			double sum = 0;
@@ -37,7 +37,7 @@
 			return correct;
 		}
 
-		public void Train(int[] input, int desiredValue, int stepCount)
+		public void Train(int[] input, int desiredValue, int stepCount) /**/
 		{
 			for (int step = 0; step < stepCount; step++)
 			{

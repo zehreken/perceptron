@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Diagnostics;
 
 namespace perceptron.Source
 {
@@ -14,7 +13,7 @@ namespace perceptron.Source
 			weights = new double[2];
 		}
 
-		private bool Step(int[] input, int desiredValue)
+		public bool Step(int[] input, int desiredValue)
 		{
 			double output;
 			double sum = 0;
@@ -36,6 +35,8 @@ namespace perceptron.Source
 					}
 				}
 			}
+//			if (desiredValue == 1)
+//				Console.WriteLine(output);
 
 			return correct;
 		}
@@ -61,7 +62,7 @@ namespace perceptron.Source
 			}
 
 			output = Utility.SigmoidF(sum);
-			return (int)Math.Floor(output + errorMargin);
+			return (int) Math.Floor(output + errorMargin);
 		}
 	}
 }

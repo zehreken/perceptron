@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Runtime.InteropServices.ComTypes;
 using perceptron.Source;
 
 namespace perceptron
@@ -7,35 +9,57 @@ namespace perceptron
 	{
 		public static void Main(string[] args)
 		{
-			TrainAndUseAndGate();
-			TrainAndUseOrGate();
-			TrainAndUseAndGateSigmoid();
-			TrainAndUseOrGateSigmoid();
-//			TrainAndUseXorGate();
+//			TrainAndUseAndGate();
+//			TrainAndUseOrGate();
+//			TrainAndUseAndGateSigmoid();
+//			TrainAndUseOrGateSigmoid();
+			TrainAndUseXorGate();
 		}
 
 		private static void TrainAndUseAndGate()
 		{
 			Console.WriteLine("Step AND Gate");
+			var trainingInputSet = new List<int[]>
+			{
+				new[] {0, 0},
+				new[] {0, 1},
+				new[] {1, 0},
+				new[] {1, 1}
+			};
+			var trainingOutputSet = new[] {0, 0, 0, 1};
 			var andGate = new StepPerceptron();
-			andGate.Train(new [] {0, 0}, 0, 100);
-			andGate.Train(new [] {0, 1}, 0, 100);
-			andGate.Train(new [] {1, 0}, 0, 100);
-			andGate.Train(new [] {1, 1}, 1, 100);
+
+			var random = new Random(0);
+			for (int i = 0; i < 100; i++)
+			{
+				int rnd = random.Next(0, 4);
+				andGate.Step(trainingInputSet[rnd], trainingOutputSet[rnd]);
+			}
 			Console.WriteLine(andGate.Use(new[] {0, 0}));
 			Console.WriteLine(andGate.Use(new[] {0, 1}));
 			Console.WriteLine(andGate.Use(new[] {1, 0}));
 			Console.WriteLine(andGate.Use(new[] {1, 1}));
 		}
-		
+
 		private static void TrainAndUseOrGate()
 		{
 			Console.WriteLine("Step OR Gate");
+			var trainingInputSet = new List<int[]>
+			{
+				new[] {0, 0},
+				new[] {0, 1},
+				new[] {1, 0},
+				new[] {1, 1}
+			};
+			var trainingOutputSet = new[] {0, 1, 1, 1};
 			var orGate = new StepPerceptron();
-			orGate.Train(new [] {0, 0}, 0, 100);
-			orGate.Train(new [] {0, 1}, 1, 100);
-			orGate.Train(new [] {1, 0}, 1, 100);
-			orGate.Train(new [] {1, 1}, 1, 100);
+
+			var random = new Random(0);
+			for (int i = 0; i < 100; i++)
+			{
+				int rnd = random.Next(0, 4);
+				orGate.Step(trainingInputSet[rnd], trainingOutputSet[rnd]);
+			}
 			Console.WriteLine(orGate.Use(new[] {0, 0}));
 			Console.WriteLine(orGate.Use(new[] {0, 1}));
 			Console.WriteLine(orGate.Use(new[] {1, 0}));
@@ -45,11 +69,22 @@ namespace perceptron
 		private static void TrainAndUseAndGateSigmoid()
 		{
 			Console.WriteLine("Sigmoid AND Gate");
+			var trainingInputSet = new List<int[]>
+			{
+				new[] {0, 0},
+				new[] {0, 1},
+				new[] {1, 0},
+				new[] {1, 1}
+			};
+			var trainingOutputSet = new[] {0, 0, 0, 1};
 			var andGate = new SigmoidPerceptron();
-			andGate.Train(new [] {0, 0}, 0, 1000);
-			andGate.Train(new [] {0, 1}, 0, 1000);
-			andGate.Train(new [] {1, 0}, 0, 1000);
-			andGate.Train(new [] {1, 1}, 1, 1000);
+
+			var random = new Random(0);
+			for (int i = 0; i < 10000; i++)
+			{
+				int rnd = random.Next(0, 4);
+				andGate.Step(trainingInputSet[rnd], trainingOutputSet[rnd]);
+			}
 			Console.WriteLine(andGate.Use(new[] {0, 0}));
 			Console.WriteLine(andGate.Use(new[] {0, 1}));
 			Console.WriteLine(andGate.Use(new[] {1, 0}));
@@ -59,11 +94,22 @@ namespace perceptron
 		private static void TrainAndUseOrGateSigmoid()
 		{
 			Console.WriteLine("Sigmoid OR Gate");
+			var trainingInputSet = new List<int[]>
+			{
+				new[] {0, 0},
+				new[] {0, 1},
+				new[] {1, 0},
+				new[] {1, 1}
+			};
+			var trainingOutputSet = new[] {0, 1, 1, 1};
 			var orGate = new SigmoidPerceptron();
-			orGate.Train(new [] {0, 0}, 0, 10000);
-			orGate.Train(new [] {0, 1}, 1, 10000);
-			orGate.Train(new [] {1, 0}, 1, 10000);
-			orGate.Train(new [] {1, 1}, 1, 10000);
+
+			var random = new Random(0);
+			for (int i = 0; i < 10000; i++)
+			{
+				int rnd = random.Next(0, 4);
+				orGate.Step(trainingInputSet[rnd], trainingOutputSet[rnd]);
+			}
 			Console.WriteLine(orGate.Use(new[] {0, 0}));
 			Console.WriteLine(orGate.Use(new[] {0, 1}));
 			Console.WriteLine(orGate.Use(new[] {1, 0}));
@@ -73,15 +119,26 @@ namespace perceptron
 		private static void TrainAndUseXorGate()
 		{
 			Console.WriteLine("XOR Gate");
+			var trainingInputSet = new List<int[]>
+			{
+				new[] {0, 0},
+				new[] {0, 1},
+				new[] {1, 0},
+				new[] {1, 1}
+			};
+			var trainingOutputSet = new[] {0, 1, 1, 0};
 			var xorGate = new XorGate();
-//			xorGate.Train(new [] {0, 0}, 0, 10000);
-			xorGate.Train(new [] {1, 0}, 1, 10000);
-			xorGate.Train(new [] {0, 1}, 1, 10000);
-			xorGate.Train(new [] {1, 1}, 0, 10000);
-			Console.WriteLine(xorGate.Use(new [] {0, 0}));
-			Console.WriteLine(xorGate.Use(new [] {1, 0}));
-			Console.WriteLine(xorGate.Use(new [] {0, 1}));
-			Console.WriteLine(xorGate.Use(new [] {1, 1}));
+
+			var random = new Random(0);
+			for (int i = 0; i < 100000; i++)
+			{
+				int rnd = random.Next(0, 4);
+				xorGate.Step(trainingInputSet[rnd], trainingOutputSet[rnd], i);
+			}
+			Console.WriteLine(xorGate.Use(new[] {0, 0}));
+			Console.WriteLine(xorGate.Use(new[] {0, 1}));
+			Console.WriteLine(xorGate.Use(new[] {1, 0}));
+			Console.WriteLine(xorGate.Use(new[] {1, 1}));
 		}
 	}
 }
