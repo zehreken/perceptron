@@ -4,16 +4,16 @@
 	{
 		private double[] weights;
 		private const double learningRate = 0.1;
-		private double threshold = 0.5f;
+		private const double threshold = 0.5f;
 
 		public StepPerceptron()
 		{
 			weights = new double[2];
 		}
 
-		public bool Step(int[] input, int desiredValue)
+		private bool Step(int[] input, int desiredValue)
 		{
-			int output = 0;
+			int output;
 			double sum = 0;
 			for (int i = 0; i < weights.Length; i++)
 			{
@@ -50,8 +50,8 @@
 
 		public int Use(int[] input)
 		{
-			int output = 0;
-			double sum = 0f;
+			int output;
+			double sum = 0;
 			for (int i = 0; i < weights.Length; i++)
 			{
 				sum += input[i] * weights[i];
