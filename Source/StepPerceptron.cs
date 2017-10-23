@@ -1,14 +1,12 @@
-﻿using System;
-
-namespace perceptron.Source
+﻿namespace perceptron.Source
 {
-	public class SimplePerceptron
+	public class StepPerceptron
 	{
 		private double[] weights;
 		private const double learningRate = 0.1;
 		private double threshold = 0.5f;
 
-		public SimplePerceptron()
+		public StepPerceptron()
 		{
 			weights = new double[2];
 		}

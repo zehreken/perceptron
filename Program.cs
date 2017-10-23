@@ -15,7 +15,7 @@ namespace perceptron
 		private static void TrainAndUseAndGate()
 		{
 			Console.WriteLine("AND Gate");
-			var andGate = new SimplePerceptron();
+			var andGate = new StepPerceptron();
 			andGate.Train(new [] {0, 0}, 0, 100);
 			andGate.Train(new [] {0, 1}, 0, 100);
 			andGate.Train(new [] {1, 0}, 0, 100);
@@ -29,7 +29,7 @@ namespace perceptron
 		private static void TrainAndUseOrGate()
 		{
 			Console.WriteLine("OR Gate");
-			var orGate = new SimplePerceptron();
+			var orGate = new StepPerceptron();
 			orGate.Train(new [] {0, 0}, 0, 100);
 			orGate.Train(new [] {0, 1}, 1, 100);
 			orGate.Train(new [] {1, 0}, 1, 100);
