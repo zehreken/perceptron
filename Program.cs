@@ -55,7 +55,7 @@ namespace perceptron
 			var orGate = new StepPerceptron();
 
 			var random = new Random(0);
-			for (int i = 0; i < 100; i++)
+			for (int i = 0; i < 1000; i++)
 			{
 				int rnd = random.Next(0, 4);
 				orGate.Step(trainingInputSet[rnd], trainingOutputSet[rnd]);
@@ -83,7 +83,7 @@ namespace perceptron
 			for (int i = 0; i < 1000; i++)
 			{
 				int rnd = random.Next(0, 4);
-				rnd = 3;
+				rnd = 1;
 				andGate.Step(trainingInputSet[rnd], trainingOutputSet[rnd]);
 			}
 			Console.WriteLine(andGate.Use(new[] {0, 0}));

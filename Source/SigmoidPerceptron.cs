@@ -24,7 +24,7 @@ namespace perceptron.Source
 
 			output = Utility.SigmoidF(sum);
 			bool correct = Math.Abs(desiredValue - output) < errorMargin;
-			Console.WriteLine("{0}", output);
+			Console.WriteLine("{0}, {1}, {2}, {3}", sum, output, weights[0], weights[1]);
 
 			if (!correct)
 			{
@@ -61,7 +61,8 @@ namespace perceptron.Source
 			}
 
 			output = Utility.SigmoidF(sum);
-			return (int) Math.Floor(output + errorMargin);
+			Console.WriteLine("{0}, {1}", sum, output);
+			return (int) output;
 		}
 	}
 }
