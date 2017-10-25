@@ -12,7 +12,7 @@ namespace perceptron
 //			TrainAndUseAndGate();
 //			TrainAndUseOrGate();
 			TrainAndUseAndGateSigmoid();
-//			TrainAndUseOrGateSigmoid();
+			TrainAndUseOrGateSigmoid();
 //			TrainAndUseXorGate();
 		}
 
@@ -80,10 +80,10 @@ namespace perceptron
 			var andGate = new SigmoidPerceptron();
 
 			var random = new Random(0);
-			for (int i = 0; i < 1000; i++)
+			for (int i = 0; i < 100000; i++)
 			{
 				int rnd = random.Next(0, 4);
-				rnd = 1;
+				rnd = 3;
 				andGate.Step(trainingInputSet[rnd], trainingOutputSet[rnd]);
 			}
 			Console.WriteLine(andGate.Use(new[] {0, 0}));
@@ -106,7 +106,7 @@ namespace perceptron
 			var orGate = new SigmoidPerceptron();
 
 			var random = new Random(0);
-			for (int i = 0; i < 10000; i++)
+			for (int i = 0; i < 6000; i++)
 			{
 				int rnd = random.Next(0, 4);
 				orGate.Step(trainingInputSet[rnd], trainingOutputSet[rnd]);

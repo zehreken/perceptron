@@ -1,4 +1,5 @@
 ﻿using System;
+using System.CodeDom;
 
 namespace perceptron.Source
 {
@@ -24,7 +25,8 @@ namespace perceptron.Source
 
 			output = Utility.SigmoidF(sum);
 			bool correct = Math.Abs(desiredValue - output) < errorMargin;
-			Console.WriteLine("{0}, {1}, {2}, {3}", sum, output, weights[0], weights[1]);
+//			Console.WriteLine("{0}, {1}, {2}", desiredValue, input[0], input[1]);
+//			Console.WriteLine("{0}, {1}, {2}, {3}", sum, output, weights[0], weights[1]);
 
 			if (!correct)
 			{
@@ -35,7 +37,9 @@ namespace perceptron.Source
 						weights[i] += (desiredValue - output) * learningRate;
 					}
 				}
+//				Console.WriteLine("{0}, {1}, {2}, {3}", sum, output, weights[0], weights[1]);
 			}
+//			Console.WriteLine("--------------------------------------------------------");
 
 			return correct;
 		}
@@ -61,7 +65,9 @@ namespace perceptron.Source
 			}
 
 			output = Utility.SigmoidF(sum);
-			Console.WriteLine("{0}, {1}", sum, output);
+			bool correct = Math.Abs(1 - output) < errorMargin;
+			output = correct ? 1 : 0;
+//			Console.WriteLine("{0}, {1}", sum, output);
 			return (int) output;
 		}
 	}
