@@ -85,9 +85,9 @@ namespace perceptron.Source
 
 		public double Use(int[] input)
 		{
-			Console.WriteLine("{0}, {1}, {2}, {3}", inputWeights[0, 0], inputWeights[0, 1], inputWeights[1, 0], inputWeights[1, 1]);
-			Console.WriteLine("{0}, {1}", hiddenBias[0], hiddenBias[1]);
-			return 0;
+//			Console.WriteLine("{0}, {1}, {2}, {3}", inputWeights[0, 0], inputWeights[0, 1], inputWeights[1, 0], inputWeights[1, 1]);
+//			Console.WriteLine("{0}, {1}", hiddenBias[0], hiddenBias[1]);
+//			return 0;
 			
 			double output;
 			double sum0 = input[0] * inputWeights[0, 0] + input[1] * inputWeights[1, 0] + hiddenBias[0]; // first hidden node
@@ -98,6 +98,8 @@ namespace perceptron.Source
 			
 			double sum = h0input * hiddenWeights[0] + h1input * hiddenWeights[1] + outputBias;
 			output = Utility.SigmoidF(sum);
+			bool correct = Math.Abs(1 - output) < errorMargin;
+			output = correct ? 1 : 0;
 
 			return output;
 		}
