@@ -34,6 +34,7 @@
 						weights[i] += (desiredValue - output) * learningRate;
 					}
 				}
+				bias += (desiredValue - output) * learningRate;
 			}
 
 			return correct;
