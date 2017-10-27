@@ -1,4 +1,6 @@
-﻿namespace perceptron.Source
+﻿using System;
+
+namespace perceptron.Source
 {
 	public class BiasedPerceptron
 	{
@@ -63,6 +65,15 @@
 
 			output = Utility.StepF(sum, threshold);
 			return output;
+		}
+
+		public override string ToString()
+		{
+			string s = "weight0: " + weights[0];
+			s += "\nweight1: " + weights[1];
+			s += "\nbias: " + bias;
+
+			return s;
 		}
 	}
 }

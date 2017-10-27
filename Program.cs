@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Runtime.Remoting.Channels;
 using perceptron.Source;
 
 namespace perceptron
@@ -9,10 +8,10 @@ namespace perceptron
 	{
 		public static void Main(string[] args)
 		{
-//			TrainAndUseAndGate();
-//			TrainAndUseOrGate();
-//			TrainAndUseAndGateSigmoid();
-//			TrainAndUseOrGateSigmoid();
+			TrainAndUseAndGate();
+			TrainAndUseOrGate();
+			TrainAndUseAndGateSigmoid();
+			TrainAndUseOrGateSigmoid();
 			TrainAndUseAndGateBiased();
 			TrainAndUseOrGateBiased();
 //			TrainAndUseXorGate();
@@ -41,6 +40,7 @@ namespace perceptron
 			Console.WriteLine(andGate.Use(new[] {0, 1}));
 			Console.WriteLine(andGate.Use(new[] {1, 0}));
 			Console.WriteLine(andGate.Use(new[] {1, 1}));
+			Console.WriteLine(andGate);
 		}
 
 		private static void TrainAndUseOrGate()
@@ -66,6 +66,7 @@ namespace perceptron
 			Console.WriteLine(orGate.Use(new[] {0, 1}));
 			Console.WriteLine(orGate.Use(new[] {1, 0}));
 			Console.WriteLine(orGate.Use(new[] {1, 1}));
+			Console.WriteLine(orGate);
 		}
 
 		private static void TrainAndUseAndGateSigmoid()
@@ -92,6 +93,7 @@ namespace perceptron
 			Console.WriteLine(andGate.Use(new[] {0, 1}));
 			Console.WriteLine(andGate.Use(new[] {1, 0}));
 			Console.WriteLine(andGate.Use(new[] {1, 1}));
+			Console.WriteLine(andGate);
 		}
 
 		private static void TrainAndUseOrGateSigmoid()
@@ -117,6 +119,7 @@ namespace perceptron
 			Console.WriteLine(orGate.Use(new[] {0, 1}));
 			Console.WriteLine(orGate.Use(new[] {1, 0}));
 			Console.WriteLine(orGate.Use(new[] {1, 1}));
+			Console.WriteLine(orGate);
 		}
 
 		private static void TrainAndUseAndGateBiased()
@@ -142,6 +145,7 @@ namespace perceptron
 			Console.WriteLine(andGate.Use(new[] {0, 1}));
 			Console.WriteLine(andGate.Use(new[] {1, 0}));
 			Console.WriteLine(andGate.Use(new[] {1, 1}));
+			Console.WriteLine(andGate);
 		}
 
 		private static void TrainAndUseOrGateBiased()
@@ -167,6 +171,7 @@ namespace perceptron
 			Console.WriteLine(orGate.Use(new[] {0, 1}));
 			Console.WriteLine(orGate.Use(new[] {1, 0}));
 			Console.WriteLine(orGate.Use(new[] {1, 1}));
+			Console.WriteLine(orGate);
 		}
 
 		private static void TrainAndUseXorGate()

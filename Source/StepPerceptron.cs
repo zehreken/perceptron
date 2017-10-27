@@ -60,5 +60,13 @@
 			output = Utility.StepF(sum, threshold);
 			return output;
 		}
+		
+		public override string ToString()
+		{
+			string s = "weight0: " + weights[0];
+			s += "\nweight1: " + weights[1];
+
+			return s;
+		}
 	}
 }

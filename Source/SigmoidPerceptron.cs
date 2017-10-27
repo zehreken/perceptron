@@ -70,5 +70,13 @@ namespace perceptron.Source
 //			Console.WriteLine("{0}, {1}", sum, output);
 			return (int) output;
 		}
+		
+		public override string ToString()
+		{
+			string s = "weight0: " + weights[0];
+			s += "\nweight1: " + weights[1];
+
+			return s;
+		}
 	}
 }
