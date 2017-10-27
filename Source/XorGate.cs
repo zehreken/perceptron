@@ -51,13 +51,13 @@ namespace perceptron.Source
 				if (h0input > 0)
 				{
 					hiddenWeights[0] += (desiredValue - output) * learningRate;
-					hiddenBias[0] += (desiredValue - output) * learningRate;
 				}
 				if (h1input > 0)
 				{
 					hiddenWeights[1] += (desiredValue - output) * learningRate;
-					hiddenBias[1] += (desiredValue - output) * learningRate;
 				}
+				hiddenBias[0] += (desiredValue - output) * learningRate;
+				hiddenBias[1] += (desiredValue - output) * learningRate;
 				outputBias += (desiredValue - output) * learningRate;
 			}
 
@@ -85,10 +85,6 @@ namespace perceptron.Source
 
 		public double Use(int[] input)
 		{
-//			Console.WriteLine("{0}, {1}, {2}, {3}", inputWeights[0, 0], inputWeights[0, 1], inputWeights[1, 0], inputWeights[1, 1]);
-//			Console.WriteLine("{0}, {1}", hiddenBias[0], hiddenBias[1]);
-//			return 0;
-			
 			double output;
 			double sum0 = input[0] * inputWeights[0, 0] + input[1] * inputWeights[1, 0] + hiddenBias[0]; // first hidden node
 			double h0input = Utility.SigmoidF(sum0);
@@ -102,6 +98,19 @@ namespace perceptron.Source
 			output = correct ? 1 : 0;
 
 			return output;
+		}
+
+		public override string ToString()
+		{
+			string s = "inputWeights0_0: " + inputWeights[0, 0];
+			s += "\ninputWeights0_1: " + inputWeights[0, 1];
+			s += "\ninputWeights1_0: " + inputWeights[1, 0];
+			s += "\ninputWeights1_1: " + inputWeights[1, 1];
+			s += "\nhiddenBias0: " + hiddenBias[0];
+			s += "\nhiddenBias1: " + hiddenBias[1];
+			s += "\noutputBias: " + outputBias;
+
+			return s;
 		}
 	}
 }

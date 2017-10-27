@@ -8,13 +8,13 @@ namespace perceptron
 	{
 		public static void Main(string[] args)
 		{
-			TrainAndUseAndGate();
-			TrainAndUseOrGate();
-			TrainAndUseAndGateSigmoid();
-			TrainAndUseOrGateSigmoid();
-			TrainAndUseAndGateBiased();
-			TrainAndUseOrGateBiased();
-//			TrainAndUseXorGate();
+//			TrainAndUseAndGate();
+//			TrainAndUseOrGate();
+//			TrainAndUseAndGateSigmoid();
+//			TrainAndUseOrGateSigmoid();
+//			TrainAndUseAndGateBiased();
+//			TrainAndUseOrGateBiased();
+			TrainAndUseXorGate();
 		}
 
 		private static void TrainAndUseAndGate()
@@ -197,6 +197,7 @@ namespace perceptron
 			Console.WriteLine(xorGate.Use(new[] {0, 1}));
 			Console.WriteLine(xorGate.Use(new[] {1, 0}));
 			Console.WriteLine(xorGate.Use(new[] {1, 1}));
+			Console.WriteLine(xorGate);
 		}
 	}
 }
