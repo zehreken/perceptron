@@ -70,18 +70,6 @@ namespace perceptron.Source
 
 			return correct;
 		}
-		
-		public void Train(int[] input, int desiredValue, int stepCount)
-		{
-			for (int step = 0; step < stepCount; step++)
-			{
-				if (Step(input, desiredValue, step))
-				{
-					break;
-				}
-			}
-			Console.WriteLine("===== End of training =====");
-		}
 
 		public double Use(int[] input)
 		{
