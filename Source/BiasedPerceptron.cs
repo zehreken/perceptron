@@ -14,7 +14,7 @@ namespace perceptron.Source
 			weights = new double[2];
 		}
 
-		public bool Train(int[] input, int desiredValue)
+		public void Train(int[] input, int desiredValue)
 		{
 			int output;
 			double sum = 0;
@@ -38,8 +38,6 @@ namespace perceptron.Source
 				}
 				bias += (desiredValue - output) * learningRate;
 			}
-
-			return correct;
 		}
 
 		public double Use(int[] input)

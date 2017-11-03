@@ -19,7 +19,7 @@ namespace perceptron.Source
 			hiddenBias = new double[2];
 		}
 
-		public bool Train(int[] input, int desiredValue)
+		public void Train(int[] input, int desiredValue)
 		{
 			double output;
 			
@@ -67,8 +67,6 @@ namespace perceptron.Source
 //				Console.WriteLine("Error: {0:0.0000}, Desired: {1}, Output: {2:0.0000}", desiredValue - output, desiredValue, output);
 //				Console.WriteLine("h0input: {0}, h1input: {1}", h0input, h1input);
 //			}
-
-			return correct;
 		}
 
 		public double Use(int[] input)

@@ -14,7 +14,7 @@ namespace perceptron.Source
 			weights = new double[2];
 		}
 
-		public bool Train(int[] input, int desiredValue)
+		public void Train(int[] input, int desiredValue)
 		{
 			double output;
 			double sum = 0;
@@ -25,8 +25,8 @@ namespace perceptron.Source
 
 			output = Utility.SigmoidF(sum);
 			bool correct = Math.Abs(desiredValue - output) < errorMargin;
-//			Console.WriteLine("{0}, {1}, {2}", desiredValue, input[0], input[1]);
-//			Console.WriteLine("{0}, {1}, {2}, {3}", sum, output, weights[0], weights[1]);
+			Console.WriteLine("{0}, {1}, {2}", desiredValue, input[0], input[1]);
+			Console.WriteLine("{0}, {1}, {2}, {3}", sum, output, weights[0], weights[1]);
 
 			if (!correct)
 			{
@@ -37,11 +37,9 @@ namespace perceptron.Source
 						weights[i] += (desiredValue - output) * learningRate;
 					}
 				}
-//				Console.WriteLine("{0}, {1}, {2}, {3}", sum, output, weights[0], weights[1]);
+				Console.WriteLine("{0}, {1}, {2}, {3}", sum, output, weights[0], weights[1]);
 			}
-//			Console.WriteLine("--------------------------------------------------------");
-
-			return correct;
+			Console.WriteLine("--------------------------------------------------------");
 		}
 
 		public double Use(int[] input)

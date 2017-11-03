@@ -11,7 +11,7 @@
 			weights = new double[2];
 		}
 
-		public bool Train(int[] input, int desiredValue)
+		public void Train(int[] input, int desiredValue)
 		{
 			int output;
 			double sum = 0;
@@ -33,8 +33,6 @@
 					}
 				}
 			}
-
-			return correct;
 		}
 
 		public double Use(int[] input)
