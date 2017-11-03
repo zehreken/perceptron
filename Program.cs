@@ -10,11 +10,11 @@ namespace perceptron
 		{
 //			TrainAndUseAndGate();
 //			TrainAndUseOrGate();
-//			TrainAndUseAndGateSigmoid();
-//			TrainAndUseOrGateSigmoid();
+			TrainAndUseAndGateSigmoid();
+			TrainAndUseOrGateSigmoid();
 //			TrainAndUseAndGateBiased();
 //			TrainAndUseOrGateBiased();
-			TrainAndUseXorGate();
+//			TrainAndUseXorGate();
 		}
 
 		private static void TrainAndUseAndGate()
@@ -34,7 +34,7 @@ namespace perceptron
 			for (int i = 0; i < 100; i++)
 			{
 				int rnd = random.Next(0, 4);
-				andGate.Step(trainingInputSet[rnd], trainingOutputSet[rnd]);
+				andGate.Train(trainingInputSet[rnd], trainingOutputSet[rnd]);
 			}
 			Console.WriteLine(andGate.Use(new[] {0, 0}));
 			Console.WriteLine(andGate.Use(new[] {0, 1}));
@@ -60,7 +60,7 @@ namespace perceptron
 			for (int i = 0; i < 1000; i++)
 			{
 				int rnd = random.Next(0, 4);
-				orGate.Step(trainingInputSet[rnd], trainingOutputSet[rnd]);
+				orGate.Train(trainingInputSet[rnd], trainingOutputSet[rnd]);
 			}
 			Console.WriteLine(orGate.Use(new[] {0, 0}));
 			Console.WriteLine(orGate.Use(new[] {0, 1}));
@@ -87,7 +87,7 @@ namespace perceptron
 			{
 				int rnd = random.Next(0, 4);
 				rnd = 3;
-				andGate.Step(trainingInputSet[rnd], trainingOutputSet[rnd]);
+				andGate.Train(trainingInputSet[rnd], trainingOutputSet[rnd]);
 			}
 			Console.WriteLine(andGate.Use(new[] {0, 0}));
 			Console.WriteLine(andGate.Use(new[] {0, 1}));
@@ -113,7 +113,7 @@ namespace perceptron
 			for (int i = 0; i < 6000; i++)
 			{
 				int rnd = random.Next(0, 4);
-				orGate.Step(trainingInputSet[rnd], trainingOutputSet[rnd]);
+				orGate.Train(trainingInputSet[rnd], trainingOutputSet[rnd]);
 			}
 			Console.WriteLine(orGate.Use(new[] {0, 0}));
 			Console.WriteLine(orGate.Use(new[] {0, 1}));
@@ -139,7 +139,7 @@ namespace perceptron
 			for (int i = 0; i < 1000; i++)
 			{
 				int rnd = random.Next(0, 4);
-				andGate.Step(trainingInputSet[rnd], trainingOutputSet[rnd]);
+				andGate.Train(trainingInputSet[rnd], trainingOutputSet[rnd]);
 			}
 			Console.WriteLine(andGate.Use(new[] {0, 0}));
 			Console.WriteLine(andGate.Use(new[] {0, 1}));
@@ -165,7 +165,7 @@ namespace perceptron
 			for (int i = 0; i < 1000; i++)
 			{
 				int rnd = random.Next(0, 4);
-				orGate.Step(trainingInputSet[rnd], trainingOutputSet[rnd]);
+				orGate.Train(trainingInputSet[rnd], trainingOutputSet[rnd]);
 			}
 			Console.WriteLine(orGate.Use(new[] {0, 0}));
 			Console.WriteLine(orGate.Use(new[] {0, 1}));

@@ -2,7 +2,7 @@
 
 namespace perceptron.Source
 {
-	public class BiasedPerceptron
+	public class BiasedPerceptron : INeuralNetwork
 	{
 		private double[] weights;
 		private double bias; // this belongs to the output neuron
@@ -14,7 +14,7 @@ namespace perceptron.Source
 			weights = new double[2];
 		}
 
-		public bool Step(int[] input, int desiredValue)
+		public bool Train(int[] input, int desiredValue)
 		{
 			int output;
 			double sum = 0;
@@ -42,18 +42,7 @@ namespace perceptron.Source
 			return correct;
 		}
 
-		public void Train(int[] input, int desiredValue, int stepCount)
-		{
-			for (int step = 0; step < stepCount; step++)
-			{
-				if (Step(input, desiredValue))
-				{
-					break;
-				}
-			}
-		}
-
-		public int Use(int[] input)
+		public double Use(int[] input)
 		{
 			int output;
 			double sum = 0;

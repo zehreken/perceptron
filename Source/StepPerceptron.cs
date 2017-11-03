@@ -1,6 +1,6 @@
 ﻿namespace perceptron.Source
 {
-	public class StepPerceptron
+	public class StepPerceptron : INeuralNetwork
 	{
 		private double[] weights;
 		private const double learningRate = 0.1;
@@ -11,7 +11,7 @@
 			weights = new double[2];
 		}
 
-		public bool Step(int[] input, int desiredValue)
+		public bool Train(int[] input, int desiredValue)
 		{
 			int output;
 			double sum = 0;
@@ -37,18 +37,7 @@
 			return correct;
 		}
 
-		public void Train(int[] input, int desiredValue, int stepCount) /**/
-		{
-			for (int step = 0; step < stepCount; step++)
-			{
-				if (Step(input, desiredValue))
-				{
-					break;
-				}
-			}
-		}
-
-		public int Use(int[] input)
+		public double Use(int[] input)
 		{
 			int output;
 			double sum = 0;

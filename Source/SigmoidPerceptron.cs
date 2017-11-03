@@ -3,7 +3,7 @@ using System.CodeDom;
 
 namespace perceptron.Source
 {
-	public class SigmoidPerceptron
+	public class SigmoidPerceptron : INeuralNetwork
 	{
 		private double[] weights;
 		private const double learningRate = 0.1;
@@ -14,7 +14,7 @@ namespace perceptron.Source
 			weights = new double[2];
 		}
 
-		public bool Step(int[] input, int desiredValue)
+		public bool Train(int[] input, int desiredValue)
 		{
 			double output;
 			double sum = 0;
@@ -44,18 +44,7 @@ namespace perceptron.Source
 			return correct;
 		}
 
-		public void Train(int[] input, int desiredValue, int stepCount)
-		{
-			for (int step = 0; step < stepCount; step++)
-			{
-				if (Step(input, desiredValue))
-				{
-					break;
-				}
-			}
-		}
-
-		public int Use(int[] input)
+		public double Use(int[] input)
 		{
 			double output;
 			double sum = 0;
