@@ -2,7 +2,7 @@
 
 namespace perceptron.Source
 {
-	public class XorGate
+	public class XorGate : INeuralNetwork
 	{
 		private double[,] inputWeights;
 		private double[] hiddenWeights;
@@ -19,7 +19,7 @@ namespace perceptron.Source
 			hiddenBias = new double[2];
 		}
 
-		public bool Step(int[] input, int desiredValue, int step)
+		public bool Train(int[] input, int desiredValue)
 		{
 			double output;
 			
