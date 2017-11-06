@@ -6,11 +6,12 @@ namespace perceptron.Source
 	public class SigmoidPerceptron : INeuralNetwork
 	{
 		private double[] weights;
-		private const double learningRate = 0.1;
+		private double learningRate = 0.1;
 		private const double errorMargin = 0.01;
 
-		public SigmoidPerceptron()
+		public SigmoidPerceptron(double learningRate = 0.1)
 		{
+			this.learningRate = learningRate;
 			weights = new double[2];
 		}
 
@@ -24,7 +25,8 @@ namespace perceptron.Source
 			}
 
 			output = Utility.SigmoidF(sum);
-			bool correct = Math.Abs(desiredValue - output) < errorMargin;
+//			bool correct = Math.Abs(desiredValue - output) < errorMargin;
+			bool correct = desiredValue == (output > 0.5 ? 1 : 0);
 			Console.WriteLine("{0}, {1}, {2}", desiredValue, input[0], input[1]);
 			Console.WriteLine("{0}, {1}, {2}, {3}", sum, output, weights[0], weights[1]);
 
@@ -52,10 +54,10 @@ namespace perceptron.Source
 			}
 
 			output = Utility.SigmoidF(sum);
-			bool correct = Math.Abs(1 - output) < errorMargin;
-			output = correct ? 1 : 0;
-//			Console.WriteLine("{0}, {1}", sum, output);
-			return (int) output;
+//			bool correct = Math.Abs(1 - output) < errorMargin;
+//			output = correct ? 1 : 0;
+			output = output > 0.5 ? 1 : 0;
+			return output;
 		}
 		
 		public override string ToString()
