@@ -8,10 +8,11 @@ namespace perceptron
 	{
 		public static void Main(string[] args)
 		{
+			Console.WriteLine(Utility.SigmoidF(1));
 //			TrainAndUseANN(new StepPerceptron(), Utility.trainingInputSet, Utility.outputAND, 100);
 //			TrainAndUseANN(new StepPerceptron(), Utility.trainingInputSet, Utility.outputOR, 100);
 
-			TrainAndUseANN(new SigmoidPerceptron(), Utility.trainingInputSet, Utility.outputAND, 500);
+//			TrainAndUseANN(new SigmoidPerceptron(), Utility.trainingInputSet, Utility.outputAND, 1000);
 //			TrainAndUseANN(new SigmoidPerceptron(), Utility.trainingInputSet, Utility.outputOR, 10000);
 
 //			TrainAndUseANN(new BiasedPerceptron(), Utility.trainingInputSet, Utility.outputAND, 100);
@@ -26,7 +27,6 @@ namespace perceptron
 			for (int i = 0; i < stepCount; i++)
 			{
 				int rnd = random.Next(0, 4);
-				rnd = 3;
 				ann.Train(trainingInputSet[rnd], outputSet[rnd]);
 			}
 			Console.WriteLine("Trained Network --------------------------------------------------------");
