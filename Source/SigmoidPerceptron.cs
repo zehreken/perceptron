@@ -52,8 +52,8 @@ namespace perceptron.Source
 			}
 
 			output = Utility.SigmoidF(sum);
-//			bool correct = Math.Abs(1 - output) < errorMargin;
-//			output = correct ? 1 : 0;
+			bool correct = Math.Abs(1 - output) < errorMargin;
+			output = correct ? 1 : 0;
 //			output = output > 0.5 ? 1 : 0;
 			return output;
 		}
