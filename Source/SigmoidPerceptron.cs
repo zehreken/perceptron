@@ -15,7 +15,7 @@ namespace perceptron.Source
 			weights = new double[2];
 		}
 
-		public void Train(int[] input, int desiredValue)
+		public bool Train(int[] input, int desiredValue)
 		{
 			double output;
 			double sum = 0;
@@ -40,6 +40,7 @@ namespace perceptron.Source
 //				Console.WriteLine("{0}, {1}, {2}, {3}", sum, output, weights[0], weights[1]);
 			}
 //			Console.WriteLine("--------------------------------------------------------");
+			return correct;
 		}
 
 		public double Use(int[] input)
