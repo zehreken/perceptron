@@ -9,7 +9,11 @@ namespace perceptron
 	{
 		public static void Main(string[] args)
 		{
-			RandomTrainAndUseANN(new StepPerceptron(), Utility.trainingInputSet, Utility.outputAND, 100);
+//			TrainAndUseANN(new StepPerceptron(), Utility.trainingInputSet, Utility.outputAND, 100);
+//			RandomTrainAndUseANN(new StepPerceptron(), Utility.trainingInputSet, Utility.outputAND, 100);
+//			ReverseTrainAndUseANN(new StepPerceptron(), Utility.trainingInputSet, Utility.outputAND, 100);
+//			AssertTrainAndUseAnn(new StepPerceptron(), Utility.trainingInputSet, Utility.outputAND, 100);
+//			AssertTrainAndUseAnn(new StepPerceptron(), Utility.trainingInputSet, Utility.outputOR, 100);
 //			RandomTrainAndUseANN(new StepPerceptron(), Utility.trainingInputSet, Utility.outputOR, 100);
 
 //			TrainAndUseANN(new SigmoidPerceptron(), Utility.trainingInputSet, Utility.outputAND, 10000);
@@ -21,6 +25,8 @@ namespace perceptron
 
 //			RandomTrainAndUseANN(new XorGate(), Utility.trainingInputSet, Utility.outputXOR, 100);
 //			TrainAndUseANN(new XorGate(), Utility.trainingInputSet, Utility.outputXOR, 100);
+			
+			AssertTrainAndUseAnn(new XorGate(), Utility.trainingInputSet, Utility.outputXOR, 1000);
 		}
 
 		private static void RandomTrainAndUseANN(INeuralNetwork ann, List<int[]> trainingInputSet, int[] outputSet, int stepCount)
@@ -61,6 +67,7 @@ namespace perceptron
 			{
 				if (ann.Train(trainingInputSet[index], outputSet[index]))
 				{
+					Console.WriteLine(string.Format("{0}, {1}", i, index));
 					index++;
 					if (index == trainingInputSet.Count)
 					{
