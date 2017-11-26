@@ -56,6 +56,19 @@ namespace perceptron
 
 		private static void AssertTrainAndUseAnn(INeuralNetwork ann, List<int[]> trainingInputSet, int[] outputSet, int maxStepCount)
 		{
+			int index = 0;
+			for (int i = 0; i < maxStepCount; i++)
+			{
+				if (ann.Train(trainingInputSet[index], outputSet[index]))
+				{
+					index++;
+					if (index == trainingInputSet.Count)
+					{
+						break;
+					}
+				}
+			}
+			UseANN(ann, trainingInputSet);
 		}
 
 		private static void UseANN(INeuralNetwork ann, List<int[]> trainingInputSet)
