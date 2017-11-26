@@ -8,7 +8,6 @@ namespace perceptron
 	{
 		public static void Main(string[] args)
 		{
-//			Console.WriteLine(Utility.SigmoidF(1));
 //			RandomTrainAndUseANN(new StepPerceptron(), Utility.trainingInputSet, Utility.outputAND, 100);
 //			RandomTrainAndUseANN(new StepPerceptron(), Utility.trainingInputSet, Utility.outputOR, 100);
 
@@ -20,7 +19,7 @@ namespace perceptron
 //			RandomTrainAndUseANN(new BiasedPerceptron(), Utility.trainingInputSet, Utility.outputOR, 100);
 
 //			RandomTrainAndUseANN(new XorGate(), Utility.trainingInputSet, Utility.outputXOR, 100);
-			TrainAndUseANN(new XorGate(), Utility.trainingInputSet, Utility.outputXOR, 100);
+//			TrainAndUseANN(new XorGate(), Utility.trainingInputSet, Utility.outputXOR, 100);
 		}
 
 		private static void RandomTrainAndUseANN(INeuralNetwork ann, List<int[]> trainingInputSet, int[] outputSet, int stepCount)
@@ -31,12 +30,7 @@ namespace perceptron
 				int rnd = random.Next(0, 4);
 				ann.Train(trainingInputSet[rnd], outputSet[rnd]);
 			}
-			Console.WriteLine("Trained Network --------------------------------------------------------");
-			for (int i = 0; i < trainingInputSet.Count; i++)
-			{
-				Console.WriteLine(ann.Use(trainingInputSet[i]));
-			}
-			Console.WriteLine(ann);
+			UseANN(ann, trainingInputSet);
 		}
 
 		private static void TrainAndUseANN(INeuralNetwork ann, List<int[]> trainingInputSet, int[] outputSet, int stepCount)
@@ -46,6 +40,21 @@ namespace perceptron
 				int index = i / (stepCount / 4);
 				ann.Train(trainingInputSet[index], outputSet[index]);
 			}
+			UseANN(ann, trainingInputSet);
+		}
+
+		private static void ReverseTrainAndUseANN(INeuralNetwork ann, List<int[]> trainingInputSet, int[] outputSet, int stepCount)
+		{
+			for (int i = stepCount - 1; i >= 0; i--)
+			{
+				int index = i / (stepCount / 4);
+				ann.Train(trainingInputSet[index], outputSet[index]);
+			}
+			UseANN(ann, trainingInputSet);
+		}
+
+		private static void UseANN(INeuralNetwork ann, List<int[]> trainingInputSet)
+		{
 			Console.WriteLine("Trained Network --------------------------------------------------------");
 			for (int i = 0; i < trainingInputSet.Count; i++)
 			{
