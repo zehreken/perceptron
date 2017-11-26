@@ -26,7 +26,7 @@ namespace perceptron
 //			RandomTrainAndUseANN(new XorGate(), Utility.trainingInputSet, Utility.outputXOR, 100);
 //			TrainAndUseANN(new XorGate(), Utility.trainingInputSet, Utility.outputXOR, 100);
 			
-			AssertTrainAndUseAnn(new XorGate(), Utility.trainingInputSet, Utility.outputXOR, 1000);
+			AssertTrainAndUseAnn(new SigmoidXorGate(), Utility.trainingInputSet, Utility.outputXOR, 1000);
 		}
 
 		private static void RandomTrainAndUseANN(INeuralNetwork ann, List<int[]> trainingInputSet, int[] outputSet, int stepCount)
@@ -67,7 +67,7 @@ namespace perceptron
 			{
 				if (ann.Train(trainingInputSet[index], outputSet[index]))
 				{
-					Console.WriteLine(string.Format("{0}, {1}", i, index));
+					Console.WriteLine(string.Format("{0}, {1}, {2}", i, index, outputSet[index]));
 					index++;
 					if (index == trainingInputSet.Count)
 					{

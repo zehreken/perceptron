@@ -47,8 +47,9 @@
     <Compile Include="Source\INeuralNetwork.cs" />
     <Compile Include="Source\SigmoidPerceptron.cs" />
     <Compile Include="Source\StepPerceptron.cs" />
+    <Compile Include="Source\StepXorGate.cs" />
     <Compile Include="Source\Utility.cs" />
-    <Compile Include="Source\XorGate.cs" />
+    <Compile Include="Source\SigmoidXorGate.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

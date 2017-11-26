@@ -2,7 +2,7 @@
 
 namespace perceptron.Source
 {
-	public class XorGate : INeuralNetwork
+	public class SigmoidXorGate : INeuralNetwork
 	{
 		private double[,] inputWeights;
 		private double[] hiddenWeights;
@@ -12,7 +12,7 @@ namespace perceptron.Source
 		private double outputBias;
 		private double errorMargin = 0.001;
 		
-		public XorGate()
+		public SigmoidXorGate()
 		{
 			inputWeights = new double[2, 2];
 			hiddenWeights = new double[2];
