@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Runtime.Serialization.Formatters;
 using perceptron.Source;
 
 namespace perceptron
@@ -51,6 +52,10 @@ namespace perceptron
 				ann.Train(trainingInputSet[index], outputSet[index]);
 			}
 			UseANN(ann, trainingInputSet);
+		}
+
+		private static void AssertTrainAndUseAnn(INeuralNetwork ann, List<int[]> trainingInputSet, int[] outputSet, int maxStepCount)
+		{
 		}
 
 		private static void UseANN(INeuralNetwork ann, List<int[]> trainingInputSet)
