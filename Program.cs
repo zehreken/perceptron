@@ -29,16 +29,19 @@ namespace perceptron
 			
 //			AssertTrainAndUseAnn(new StepXorGate(), Utils.trainingInputSet, Utils.outputXOR, 100);
 
-			var test = new int[2, 4];
+			var test = new double[2, 3];
+			double temp = 1;
 			for (int i = 0; i < test.GetLength(0); i++)
 			{
 				for (int j = 0; j < test.GetLength(1); j++)
 				{
-					test[i, j] = i;
+					test[i, j] = temp++;
 				}
 			}
 			Console.WriteLine(test.Printable());
 			Console.WriteLine(test.Transpose().Printable());
+
+			Console.WriteLine(MatrixUtils.Multiply(test, test.Transpose()).Printable());
 		}
 
 		private static void RandomTrainAndUseANN(INeuralNetwork ann, List<int[]> trainingInputSet, int[] outputSet, int stepCount)
