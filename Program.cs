@@ -23,10 +23,12 @@ namespace perceptron
 //			RandomTrainAndUseANN(new BiasedPerceptron(), Utility.trainingInputSet, Utility.outputAND, 100);
 //			RandomTrainAndUseANN(new BiasedPerceptron(), Utility.trainingInputSet, Utility.outputOR, 100);
 
-//			RandomTrainAndUseANN(new XorGate(), Utility.trainingInputSet, Utility.outputXOR, 100);
-//			OrderTrainAndUseANN(new XorGate(), Utility.trainingInputSet, Utility.outputXOR, 100);
+//			RandomTrainAndUseANN(new SigmoidXorGate(), Utility.trainingInputSet, Utility.outputXOR, 100);
+//			OrderTrainAndUseANN(new SigmoidXorGate(), Utility.trainingInputSet, Utility.outputXOR, 100);
+//			
+//			AssertTrainAndUseAnn(new SigmoidXorGate(), Utility.trainingInputSet, Utility.outputXOR, 1000);
 			
-			AssertTrainAndUseAnn(new SigmoidXorGate(), Utility.trainingInputSet, Utility.outputXOR, 1000);
+			OrderTrainAndUseANN(new StepXorGate(), Utility.trainingInputSet, Utility.outputXOR, 100);
 		}
 
 		private static void RandomTrainAndUseANN(INeuralNetwork ann, List<int[]> trainingInputSet, int[] outputSet, int stepCount)
