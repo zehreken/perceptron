@@ -13,12 +13,11 @@ namespace perceptron
 //			RandomTrainAndUseANN(new StepPerceptron(), Utility.trainingInputSet, Utility.outputAND, 100);
 //			ReverseTrainAndUseANN(new StepPerceptron(), Utility.trainingInputSet, Utility.outputAND, 100);
 //			AssertTrainAndUseAnn(new StepPerceptron(), Utility.trainingInputSet, Utility.outputAND, 100);
-//			AssertTrainAndUseAnn(new StepPerceptron(), Utility.trainingInputSet, Utility.outputOR, 100);
+			
+//			OrderTrainAndUseANN(new StepPerceptron(), Utility.trainingInputSet, Utility.outputOR, 100);
 //			RandomTrainAndUseANN(new StepPerceptron(), Utility.trainingInputSet, Utility.outputOR, 100);
-
-//			OrderTrainAndUseANN(new SigmoidPerceptron(), Utility.trainingInputSet, Utility.outputAND, 10000);
-//			OrderTrainAndUseANN(new SigmoidPerceptron(), Utility.trainingInputSet, Utility.outputOR, 10000);
-//			RandomTrainAndUseANN(new SigmoidPerceptron(), Utility.trainingInputSet, Utility.outputOR, 10000);
+//			ReverseTrainAndUseANN(new StepPerceptron(), Utility.trainingInputSet, Utility.outputOR, 100);
+//			AssertTrainAndUseAnn(new StepPerceptron(), Utility.trainingInputSet, Utility.outputOR, 100);
 
 //			RandomTrainAndUseANN(new BiasedPerceptron(), Utility.trainingInputSet, Utility.outputAND, 100);
 //			RandomTrainAndUseANN(new BiasedPerceptron(), Utility.trainingInputSet, Utility.outputOR, 100);
@@ -28,7 +27,7 @@ namespace perceptron
 //			
 //			AssertTrainAndUseAnn(new SigmoidXorGate(), Utility.trainingInputSet, Utility.outputXOR, 1000);
 			
-			OrderTrainAndUseANN(new StepXorGate(), Utility.trainingInputSet, Utility.outputXOR, 100);
+//			AssertTrainAndUseAnn(new StepXorGate(), Utility.trainingInputSet, Utility.outputXOR, 100);
 		}
 
 		private static void RandomTrainAndUseANN(INeuralNetwork ann, List<int[]> trainingInputSet, int[] outputSet, int stepCount)
@@ -69,7 +68,7 @@ namespace perceptron
 			{
 				if (ann.Train(trainingInputSet[index], outputSet[index]))
 				{
-					Console.WriteLine(string.Format("{0}, {1}, {2}", i, index, outputSet[index]));
+					Console.WriteLine("step: {0}\t index: {1}\t output:{2}", i, index, outputSet[index]);
 					index++;
 					if (index == trainingInputSet.Count)
 					{
