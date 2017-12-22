@@ -24,13 +24,13 @@ namespace perceptron.Source
 			double output;
 
 			double sum0 = input[0] * inputWeights[0, 0] + input[1] * inputWeights[1, 0] + hiddenBias[0];
-			double h0input = Utility.StepF(sum0, 0.5);
+			double h0input = Utils.StepF(sum0, 0.5);
 
 			double sum1 = input[0] * inputWeights[0, 1] + input[1] * inputWeights[1, 1] + hiddenBias[1];
-			double h1input = Utility.StepF(sum1, 0.5);
+			double h1input = Utils.StepF(sum1, 0.5);
 
 			double sum = h0input * hiddenWeights[0] + h1input * hiddenWeights[1] + outputBias;
-			output = Utility.StepF(sum, 0.5);
+			output = Utils.StepF(sum, 0.5);
 
 			bool correct = output == desiredValue;
 
@@ -66,13 +66,13 @@ namespace perceptron.Source
 		{
 			double output;
 			double sum0 = input[0] * inputWeights[0, 0] + input[1] * inputWeights[1, 0] + hiddenBias[0];
-			double h0input = Utility.StepF(sum0, 0.5);
+			double h0input = Utils.StepF(sum0, 0.5);
 
 			double sum1 = input[0] * inputWeights[0, 1] + input[1] * inputWeights[1, 1] * hiddenBias[1];
-			double h1input = Utility.StepF(sum1, 0.5);
+			double h1input = Utils.StepF(sum1, 0.5);
 
 			double sum = h0input * hiddenWeights[0] + h1input * hiddenWeights[1] + outputBias;
-			output = Utility.StepF(sum, 0.5);
+			output = Utils.StepF(sum, 0.5);
 
 			return output;
 		}

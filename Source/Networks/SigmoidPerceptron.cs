@@ -24,7 +24,7 @@ namespace perceptron.Source
 				sum += input[i] * weights[i];
 			}
 
-			output = Utility.SigmoidF(sum);
+			output = Utils.SigmoidF(sum);
 			bool correct = Math.Abs(desiredValue - output) < errorMargin;
 //			bool correct = desiredValue == (output > 0.5 ? 1 : 0);
 			Console.WriteLine("sum: {0:0.00} output: {1:0.00} w0: {2:0.00} w1: {3:0.00} desired: {4:0.00} i0: {5:0.00} i1: {6:0.00}", sum, output, weights[0], weights[1], desiredValue, input[0], input[1]);
@@ -52,7 +52,7 @@ namespace perceptron.Source
 				sum += input[i] * weights[i];
 			}
 
-			output = Utility.SigmoidF(sum);
+			output = Utils.SigmoidF(sum);
 			bool correct = Math.Abs(1 - output) < errorMargin;
 			output = correct ? 1 : 0;
 //			output = output > 0.5 ? 1 : 0;

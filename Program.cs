@@ -9,25 +9,25 @@ namespace perceptron
 	{
 		public static void Main(string[] args)
 		{
-//			OrderTrainAndUseANN(new StepPerceptron(), Utility.trainingInputSet, Utility.outputAND, 100);
-//			RandomTrainAndUseANN(new StepPerceptron(), Utility.trainingInputSet, Utility.outputAND, 100);
-//			ReverseTrainAndUseANN(new StepPerceptron(), Utility.trainingInputSet, Utility.outputAND, 100);
-//			AssertTrainAndUseAnn(new StepPerceptron(), Utility.trainingInputSet, Utility.outputAND, 100);
+			OrderTrainAndUseANN(new StepPerceptron(), Utils.trainingInputSet, Utils.outputAND, 100);
+//			RandomTrainAndUseANN(new StepPerceptron(), Utils.trainingInputSet, Utils.outputAND, 100);
+//			ReverseTrainAndUseANN(new StepPerceptron(), Utils.trainingInputSet, Utils.outputAND, 100);
+//			AssertTrainAndUseAnn(new StepPerceptron(), Utils.trainingInputSet, Utils.outputAND, 100);
 			
-//			OrderTrainAndUseANN(new StepPerceptron(), Utility.trainingInputSet, Utility.outputOR, 100);
-//			RandomTrainAndUseANN(new StepPerceptron(), Utility.trainingInputSet, Utility.outputOR, 100);
-//			ReverseTrainAndUseANN(new StepPerceptron(), Utility.trainingInputSet, Utility.outputOR, 100);
-//			AssertTrainAndUseAnn(new StepPerceptron(), Utility.trainingInputSet, Utility.outputOR, 100);
+//			OrderTrainAndUseANN(new StepPerceptron(), Utils.trainingInputSet, Utils.outputOR, 100);
+//			RandomTrainAndUseANN(new StepPerceptron(), Utils.trainingInputSet, Utils.outputOR, 100);
+//			ReverseTrainAndUseANN(new StepPerceptron(), Utils.trainingInputSet, Utils.outputOR, 100);
+//			AssertTrainAndUseAnn(new StepPerceptron(), Utils.trainingInputSet, Utils.outputOR, 100);
 
-//			RandomTrainAndUseANN(new BiasedPerceptron(), Utility.trainingInputSet, Utility.outputAND, 100);
-//			RandomTrainAndUseANN(new BiasedPerceptron(), Utility.trainingInputSet, Utility.outputOR, 100);
+//			RandomTrainAndUseANN(new BiasedPerceptron(), Utils.trainingInputSet, Utils.outputAND, 100);
+//			RandomTrainAndUseANN(new BiasedPerceptron(), Utils.trainingInputSet, Utils.outputOR, 100);
 
-//			RandomTrainAndUseANN(new SigmoidXorGate(), Utility.trainingInputSet, Utility.outputXOR, 100);
-//			OrderTrainAndUseANN(new SigmoidXorGate(), Utility.trainingInputSet, Utility.outputXOR, 100);
+//			RandomTrainAndUseANN(new SigmoidXorGate(), Utils.trainingInputSet, Utils.outputXOR, 100);
+//			OrderTrainAndUseANN(new SigmoidXorGate(), Utils.trainingInputSet, Utils.outputXOR, 100);
 //			
-//			AssertTrainAndUseAnn(new SigmoidXorGate(), Utility.trainingInputSet, Utility.outputXOR, 1000);
+//			AssertTrainAndUseAnn(new SigmoidXorGate(), Utils.trainingInputSet, Utils.outputXOR, 1000);
 			
-//			AssertTrainAndUseAnn(new StepXorGate(), Utility.trainingInputSet, Utility.outputXOR, 100);
+//			AssertTrainAndUseAnn(new StepXorGate(), Utils.trainingInputSet, Utils.outputXOR, 100);
 		}
 
 		private static void RandomTrainAndUseANN(INeuralNetwork ann, List<int[]> trainingInputSet, int[] outputSet, int stepCount)

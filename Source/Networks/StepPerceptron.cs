@@ -20,7 +20,7 @@
 				sum += input[i] * weights[i];
 			}
 
-			output = Utility.StepF(sum, threshold);
+			output = Utils.StepF(sum, threshold);
 			bool correct = output == desiredValue;
 
 			if (!correct)
@@ -46,7 +46,7 @@
 				sum += input[i] * weights[i];
 			}
 
-			output = Utility.StepF(sum, threshold);
+			output = Utils.StepF(sum, threshold);
 			return output;
 		}
 		

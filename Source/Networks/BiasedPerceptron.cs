@@ -24,7 +24,7 @@ namespace perceptron.Source
 			}
 			sum += bias;
 
-			output = Utility.StepF(sum, threshold);
+			output = Utils.StepF(sum, threshold);
 			bool correct = output == desiredValue;
 
 			if (!correct)
@@ -52,7 +52,7 @@ namespace perceptron.Source
 			}
 			sum += bias;
 
-			output = Utility.StepF(sum, threshold);
+			output = Utils.StepF(sum, threshold);
 			return output;
 		}
 

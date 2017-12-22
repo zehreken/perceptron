@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace perceptron.Source
 {
-	public static class Utility
+	public static class Utils
 	{
 		public static List<int[]> trainingInputSet = new List<int[]>
 		{

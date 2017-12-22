@@ -44,12 +44,13 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Source\INeuralNetwork.cs" />
+    <Compile Include="Source\MatrixUtils.cs" />
     <Compile Include="Source\Networks\BiasedPerceptron.cs" />
     <Compile Include="Source\Networks\SigmoidPerceptron.cs" />
     <Compile Include="Source\Networks\SigmoidXorGate.cs" />
     <Compile Include="Source\Networks\StepPerceptron.cs" />
     <Compile Include="Source\Networks\StepXorGate.cs" />
-    <Compile Include="Source\Utility.cs" />
+    <Compile Include="Source\Utils.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
