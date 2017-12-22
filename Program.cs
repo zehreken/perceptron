@@ -9,22 +9,22 @@ namespace perceptron
 	{
 		public static void Main(string[] args)
 		{
-//			TrainAndUseANN(new StepPerceptron(), Utility.trainingInputSet, Utility.outputAND, 100);
+//			OrderTrainAndUseANN(new StepPerceptron(), Utility.trainingInputSet, Utility.outputAND, 100);
 //			RandomTrainAndUseANN(new StepPerceptron(), Utility.trainingInputSet, Utility.outputAND, 100);
 //			ReverseTrainAndUseANN(new StepPerceptron(), Utility.trainingInputSet, Utility.outputAND, 100);
 //			AssertTrainAndUseAnn(new StepPerceptron(), Utility.trainingInputSet, Utility.outputAND, 100);
 //			AssertTrainAndUseAnn(new StepPerceptron(), Utility.trainingInputSet, Utility.outputOR, 100);
 //			RandomTrainAndUseANN(new StepPerceptron(), Utility.trainingInputSet, Utility.outputOR, 100);
 
-//			TrainAndUseANN(new SigmoidPerceptron(), Utility.trainingInputSet, Utility.outputAND, 10000);
-//			TrainAndUseANN(new SigmoidPerceptron(), Utility.trainingInputSet, Utility.outputOR, 10000);
+//			OrderTrainAndUseANN(new SigmoidPerceptron(), Utility.trainingInputSet, Utility.outputAND, 10000);
+//			OrderTrainAndUseANN(new SigmoidPerceptron(), Utility.trainingInputSet, Utility.outputOR, 10000);
 //			RandomTrainAndUseANN(new SigmoidPerceptron(), Utility.trainingInputSet, Utility.outputOR, 10000);
 
 //			RandomTrainAndUseANN(new BiasedPerceptron(), Utility.trainingInputSet, Utility.outputAND, 100);
 //			RandomTrainAndUseANN(new BiasedPerceptron(), Utility.trainingInputSet, Utility.outputOR, 100);
 
 //			RandomTrainAndUseANN(new XorGate(), Utility.trainingInputSet, Utility.outputXOR, 100);
-//			TrainAndUseANN(new XorGate(), Utility.trainingInputSet, Utility.outputXOR, 100);
+//			OrderTrainAndUseANN(new XorGate(), Utility.trainingInputSet, Utility.outputXOR, 100);
 			
 			AssertTrainAndUseAnn(new SigmoidXorGate(), Utility.trainingInputSet, Utility.outputXOR, 1000);
 		}
@@ -40,7 +40,7 @@ namespace perceptron
 			UseANN(ann, trainingInputSet);
 		}
 
-		private static void TrainAndUseANN(INeuralNetwork ann, List<int[]> trainingInputSet, int[] outputSet, int stepCount)
+		private static void OrderTrainAndUseANN(INeuralNetwork ann, List<int[]> trainingInputSet, int[] outputSet, int stepCount)
 		{
 			for (int i = 0; i < stepCount; i++)
 			{
