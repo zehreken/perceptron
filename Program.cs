@@ -37,8 +37,8 @@ namespace perceptron
 					test[i, j] = i;
 				}
 			}
-			Console.WriteLine(test.Stringify());
-			Console.WriteLine(test.Transpose().Stringify());
+			Console.WriteLine(test.Printable());
+			Console.WriteLine(test.Transpose().Printable());
 		}
 
 		private static void RandomTrainAndUseANN(INeuralNetwork ann, List<int[]> trainingInputSet, int[] outputSet, int stepCount)

@@ -18,7 +18,7 @@ namespace perceptron.Source
 			return transposed;
 		}
 
-		public static string Stringify<T>(this T[,] matrix)
+		public static string Printable<T>(this T[,] matrix)
 		{
 			string s = "";
 			for (int i = 0; i < matrix.GetLength(0); i++)
