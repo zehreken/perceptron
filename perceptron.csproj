@@ -50,6 +50,7 @@
     <Compile Include="Source\Networks\SigmoidXorGate.cs" />
     <Compile Include="Source\Networks\StepPerceptron.cs" />
     <Compile Include="Source\Networks\StepXorGate.cs" />
+    <Compile Include="Source\UnitTests\MatrixTests.cs" />
     <Compile Include="Source\Utils.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
