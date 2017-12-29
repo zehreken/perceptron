@@ -54,6 +54,21 @@ namespace perceptron.Source
 					}
 				}
 			}
+			
+			return product;
+		}
+
+		public static double[,] Multiply(double[,] a, double b)
+		{
+			var product = new double[a.GetLength(0), a.GetLength(1)];
+			for (int i = 0; i < a.GetLength(0); i++)
+			{
+				for (int j = 0; j < a.GetLength(1); j++)
+				{
+					product[i, j] = a[i, j] * b;
+				}
+			}
+
 			return product;
 		}
 		

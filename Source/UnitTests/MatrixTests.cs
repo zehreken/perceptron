@@ -17,6 +17,9 @@ namespace perceptron.Source
 			}
 			Console.WriteLine(test.Printable());
 			Console.WriteLine(test.Transpose().Printable());
+			
+			Console.WriteLine(test.Printable());
+			Console.WriteLine(MatrixUtils.Multiply(test.Transpose(), 3).Printable());
 
 			Console.WriteLine(MatrixUtils.Multiply(test, test.Transpose()).Printable());
 		}
