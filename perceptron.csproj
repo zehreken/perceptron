@@ -46,6 +46,7 @@
     <Compile Include="Source\INeuralNetwork.cs" />
     <Compile Include="Source\MatrixUtils.cs" />
     <Compile Include="Source\Networks\BiasedPerceptron.cs" />
+    <Compile Include="Source\Networks\GenericStepPerceptron.cs" />
     <Compile Include="Source\Networks\SigmoidPerceptron.cs" />
     <Compile Include="Source\Networks\SigmoidXorGate.cs" />
     <Compile Include="Source\Networks\StepPerceptron.cs" />
