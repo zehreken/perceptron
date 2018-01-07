@@ -16,6 +16,8 @@ namespace perceptron.Source
 		{
 			int output;
 			double sum = 0;
+			
+			
 
 			return default(bool);
 		}

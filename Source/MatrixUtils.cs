@@ -71,6 +71,20 @@ namespace perceptron.Source
 
 			return product;
 		}
+
+		public static double Sum(double[,] a)
+		{
+			double sum = 0;
+			for (int i = 0; i < a.GetLength(0); i++)
+			{
+				for (int j = 0; j < a.GetLength(1); j++)
+				{
+					sum += a[i, j];
+				}
+			}
+
+			return sum;
+		}
 		
 		public static string Printable<T>(this T[,] matrix)
 		{
