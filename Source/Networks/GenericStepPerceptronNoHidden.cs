@@ -1,12 +1,15 @@
-﻿namespace perceptron.Source
+﻿using System;
+
+namespace perceptron.Source
 {
-	public class GenericStepPerceptron : INeuralNetwork
+	public class GenericStepPerceptronNoHidden : INeuralNetwork
 	{
 		private double[,] weights;
 		
-		public GenericStepPerceptron(int inputNeuronCount, int hiddenNeuronCount)
+		public GenericStepPerceptronNoHidden(int inputNeuronCount)
 		{
-			weights = new double[inputNeuronCount, hiddenNeuronCount];
+			if (inputNeuronCount <= 1)
+				throw new Exception("Input neuron count should be greater than 1");
 		}
 		
 		public bool Train(int[] input, int desiredValue)
