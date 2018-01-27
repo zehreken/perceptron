@@ -24,7 +24,7 @@ namespace perceptron.Source
 		public bool Train(double[,] input, double desiredValue)
 		{
 			double output;
-			double sum = MatrixUtils.Sum(MatrixUtils.Multiply(weights, input));
+			double sum = MatrixUtils.ElementsSum(MatrixUtils.Multiply(weights, input));
 
 			output = Utils.StepF(sum, threshold);
 			bool correct = output == desiredValue;

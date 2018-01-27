@@ -72,7 +72,7 @@ namespace perceptron.Source
 			return product;
 		}
 
-		public static double Sum(double[,] a)
+		public static double ElementsSum(double[,] a)
 		{
 			double sum = 0;
 			for (int i = 0; i < a.GetLength(0); i++)

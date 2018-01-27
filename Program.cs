@@ -35,7 +35,7 @@ namespace perceptron
 			{
 				int rnd = random.Next(0, 4);
 //				gsp.Train(, outputSet[rnd]);
-			}
+			s
 
 //			UseANN(ann, trainingInputSet);
 
