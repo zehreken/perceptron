@@ -9,11 +9,11 @@ namespace perceptron
 	{
 		public static void Main(string[] args)
 		{
-			OrderTrainAndUseANN(new StepPerceptron(), Utils.trainingInputSet, Utils.outputAND, 100);
+//			OrderTrainAndUseANN(new StepPerceptron(), Utils.trainingInputSet, Utils.outputAND, 100);
 //			RandomTrainAndUseANN(new StepPerceptron(), Utils.trainingInputSet, Utils.outputAND, 100);
 //			ReverseTrainAndUseANN(new StepPerceptron(), Utils.trainingInputSet, Utils.outputAND, 100);
 //			AssertTrainAndUseAnn(new StepPerceptron(), Utils.trainingInputSet, Utils.outputAND, 100);
-			
+
 //			OrderTrainAndUseANN(new StepPerceptron(), Utils.trainingInputSet, Utils.outputOR, 100);
 //			RandomTrainAndUseANN(new StepPerceptron(), Utils.trainingInputSet, Utils.outputOR, 100);
 //			ReverseTrainAndUseANN(new StepPerceptron(), Utils.trainingInputSet, Utils.outputOR, 100);
@@ -26,8 +26,18 @@ namespace perceptron
 //			OrderTrainAndUseANN(new SigmoidXorGate(), Utils.trainingInputSet, Utils.outputXOR, 100);
 //			
 //			AssertTrainAndUseAnn(new SigmoidXorGate(), Utils.trainingInputSet, Utils.outputXOR, 1000);
-			
+
 //			AssertTrainAndUseAnn(new StepXorGate(), Utils.trainingInputSet, Utils.outputXOR, 100);
+			
+			var random = new Random(0);
+			var gsp = new GenericStepPerceptronNoHidden(2);
+			for (int i = 0; i < 100; i++)
+			{
+				int rnd = random.Next(0, 4);
+//				gsp.Train(, outputSet[rnd]);
+			}
+
+//			UseANN(ann, trainingInputSet);
 
 			MatrixTests.Test();
 		}
@@ -40,6 +50,7 @@ namespace perceptron
 				int rnd = random.Next(0, 4);
 				ann.Train(trainingInputSet[rnd], outputSet[rnd]);
 			}
+
 			UseANN(ann, trainingInputSet);
 		}
 
@@ -50,6 +61,7 @@ namespace perceptron
 				int index = i / (stepCount / 4);
 				ann.Train(trainingInputSet[index], outputSet[index]);
 			}
+
 			UseANN(ann, trainingInputSet);
 		}
 
@@ -60,6 +72,7 @@ namespace perceptron
 				int index = i / (stepCount / 4);
 				ann.Train(trainingInputSet[index], outputSet[index]);
 			}
+
 			UseANN(ann, trainingInputSet);
 		}
 
@@ -78,6 +91,7 @@ namespace perceptron
 					}
 				}
 			}
+
 			UseANN(ann, trainingInputSet);
 		}
 
@@ -88,6 +102,7 @@ namespace perceptron
 			{
 				Console.WriteLine(ann.Use(trainingInputSet[i]));
 			}
+
 			Console.WriteLine(ann);
 		}
 	}

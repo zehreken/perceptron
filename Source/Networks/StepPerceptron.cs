@@ -4,7 +4,7 @@
 	{
 		private double[] weights;
 		private const double learningRate = 0.1;
-		private const double threshold = 0.5f;
+		private const double threshold = 0.5;
 
 		public StepPerceptron()
 		{
@@ -49,7 +49,7 @@
 			output = Utils.StepF(sum, threshold);
 			return output;
 		}
-		
+
 		public override string ToString()
 		{
 			string s = "weight0: " + weights[0];
