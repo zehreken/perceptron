@@ -5,7 +5,7 @@ namespace perceptron.Source
 {
 	public static class MatrixTests
 	{
-		public static void Test()
+		public static void Run()
 		{
 			var test = new double[2, 3];
 			double temp = 1;
