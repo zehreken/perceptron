@@ -1,5 +1,7 @@
 .idea/
 bin/
 obj/
+*.csproj
+*.sln
 
 .DS_Store
