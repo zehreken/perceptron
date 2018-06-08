@@ -8,28 +8,30 @@ namespace perceptron
 	{
 		public static void Main(string[] args)
 		{
-//			RandomTrainAndUseANN(new StepPerceptron(), Utils.trainingInputSet, Utils.outputAND, 100);
-//			OrderTrainAndUseANN(new StepPerceptron(), Utils.trainingInputSet, Utils.outputAND, 100);
-//			ReverseTrainAndUseANN(new StepPerceptron(), Utils.trainingInputSet, Utils.outputAND, 100);
+//			RandomTrainAndUseAnn(new StepPerceptron(), Utils.trainingInputSet, Utils.outputAND, 100);
+//			OrderTrainAndUseAnn(new StepPerceptron(), Utils.trainingInputSet, Utils.outputAND, 100);
+//			ReverseTrainAndUseAnn(new StepPerceptron(), Utils.trainingInputSet, Utils.outputAND, 100);
 //			AssertTrainAndUseAnn(new StepPerceptron(), Utils.trainingInputSet, Utils.outputAND, 100);
 
 //			RandomTrainAndUseAnn(new StepPerceptron(), Utils.trainingInputSet, Utils.outputOR, 100);
 //			OrderTrainAndUseAnn(new StepPerceptron(), Utils.trainingInputSet, Utils.outputOR, 100);
 //			ReverseTrainAndUseAnn(new StepPerceptron(), Utils.trainingInputSet, Utils.outputOR, 100);
 //			AssertTrainAndUseAnn(new StepPerceptron(), Utils.trainingInputSet, Utils.outputOR, 100);
-			
-			OrderTrainAndUseAnn(new SigmoidPerceptron(), Utils.trainingInputSet, Utils.outputAND, 100);
 
-//			RandomTrainAndUseANN(new BiasedPerceptron(), Utils.trainingInputSet, Utils.outputAND, 100);
-//			RandomTrainAndUseANN(new BiasedPerceptron(), Utils.trainingInputSet, Utils.outputOR, 100);
+			OrderTrainAndUseAnn(new SigmoidPerceptron(), Utils.trainingInputSet, Utils.outputAND, 1000000);
 
-//			RandomTrainAndUseANN(new SigmoidXorGate(), Utils.trainingInputSet, Utils.outputXOR, 100);
-//			OrderTrainAndUseANN(new SigmoidXorGate(), Utils.trainingInputSet, Utils.outputXOR, 100);
+			OrderTrainAndUseAnn(new SigmoidPerceptron(), Utils.trainingInputSet, Utils.outputOR, 1000000);
+
+//			RandomTrainAndUseAnn(new BiasedPerceptron(), Utils.trainingInputSet, Utils.outputAND, 100);
+//			RandomTrainAndUseAnn(new BiasedPerceptron(), Utils.trainingInputSet, Utils.outputOR, 100);
+
+//			RandomTrainAndUseAnn(new SigmoidXorGate(), Utils.trainingInputSet, Utils.outputXOR, 100);
+//			OrderTrainAndUseAnn(new SigmoidXorGate(), Utils.trainingInputSet, Utils.outputXOR, 100);
 //			
 //			AssertTrainAndUseAnn(new SigmoidXorGate(), Utils.trainingInputSet, Utils.outputXOR, 1000);
 
 //			AssertTrainAndUseAnn(new StepXorGate(), Utils.trainingInputSet, Utils.outputXOR, 100);
-			
+
 //			var random = new Random(0);
 //			var gsp = new GenericStepPerceptronNoHidden(2);
 //			for (int i = 0; i < 100; i++)
