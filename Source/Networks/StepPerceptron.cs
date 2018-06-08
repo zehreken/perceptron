@@ -2,58 +2,56 @@
 {
 	public class StepPerceptron : INeuralNetwork
 	{
-		private double[] weights;
-		private const double learningRate = 0.1;
-		private const double threshold = 0.5;
+		private readonly double[] _weights;
+		private const double LearningRate = 0.1;
+		private const double Threshold = 0.5;
 
 		public StepPerceptron()
 		{
-			weights = new double[2];
+			_weights = new double[2];
 		}
 
 		public bool Train(int[] input, int desiredValue)
 		{
-			int output;
 			double sum = 0;
-			for (int i = 0; i < weights.Length; i++)
+			for (int i = 0; i < _weights.Length; i++)
 			{
-				sum += input[i] * weights[i];
+				sum += input[i] * _weights[i];
 			}
 
-			output = Utils.StepF(sum, threshold);
-			bool correct = output == desiredValue;
+			var output = Utils.StepF(sum, Threshold);
+			bool isCorrect = output == desiredValue;
 
-			if (!correct)
+			if (!isCorrect)
 			{
-				for (int i = 0; i < weights.Length; i++)
+				for (int i = 0; i < _weights.Length; i++)
 				{
 					if (input[i] > 0)
 					{
-						weights[i] += (desiredValue - output) * learningRate;
+						_weights[i] += (desiredValue - output) * LearningRate;
 					}
 				}
 			}
 
-			return correct;
+			return isCorrect;
 		}
 
 		public double Use(int[] input)
 		{
-			int output;
 			double sum = 0;
-			for (int i = 0; i < weights.Length; i++)
+			for (int i = 0; i < _weights.Length; i++)
 			{
-				sum += input[i] * weights[i];
+				sum += input[i] * _weights[i];
 			}
 
-			output = Utils.StepF(sum, threshold);
+			var output = Utils.StepF(sum, Threshold);
 			return output;
 		}
 
 		public override string ToString()
 		{
-			string s = "weight0: " + weights[0];
-			s += "\nweight1: " + weights[1];
+			string s = "weight0: " + _weights[0];
+			s += "\nweight1: " + _weights[1];
 
 			return s;
 		}

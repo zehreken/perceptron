@@ -42,7 +42,7 @@ namespace perceptron.Source
 		{
 			if (a.GetLength(1) != b.GetLength(0))
 				throw new Exception("Matrix dimensions are not suitable for multiplication");
-			
+
 			var product = new double[a.GetLength(0), b.GetLength(1)];
 			for (int i = 0; i < a.GetLength(0); i++)
 			{
@@ -54,7 +54,7 @@ namespace perceptron.Source
 					}
 				}
 			}
-			
+
 			return product;
 		}
 
@@ -85,7 +85,7 @@ namespace perceptron.Source
 
 			return sum;
 		}
-		
+
 		public static string Printable<T>(this T[,] matrix)
 		{
 			string s = "";
@@ -95,9 +95,10 @@ namespace perceptron.Source
 				{
 					s += matrix[i, j] + " ";
 				}
+
 				s += "\n";
 			}
-			
+
 			return s;
 		}
 	}
