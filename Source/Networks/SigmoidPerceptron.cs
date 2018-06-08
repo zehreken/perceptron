@@ -7,7 +7,8 @@ namespace perceptron.Source
 		private readonly double[] _weights;
 		private readonly double _learningRate;
 		private const double ErrorMargin = 0.01;
-		private const double Threshold = 0.55;
+		private const double Threshold = 0.5;
+		private const double NeuronThreshold = 0.2;
 
 		public SigmoidPerceptron(double learningRate = 0.1)
 		{
@@ -23,9 +24,9 @@ namespace perceptron.Source
 				sum += input[i] * _weights[i];
 			}
 
-			var output = Utils.SigmoidF(sum) > Threshold ? 1 : 0;
+			var output = Utils.SigmoidF(sum - NeuronThreshold) > Threshold ? 1 : 0;
 			bool correct = desiredValue == output;
-			
+
 //			Console.WriteLine("sum: {0:0.00} |output: {1:0.00} |w0: {2:0.00} |w1: {3:0.00} |desired: {4:0.00} |i0: {5:0.00} |i1: {6:0.00}", sum, output, _weights[0], _weights[1], desiredValue, input[0], input[1]);
 			if (!correct)
 			{
@@ -49,7 +50,7 @@ namespace perceptron.Source
 				sum += input[i] * _weights[i];
 			}
 
-			var output = Utils.SigmoidF(sum) > Threshold ? 1 : 0;
+			var output = Utils.SigmoidF(sum - NeuronThreshold) > Threshold ? 1 : 0;
 			return output;
 		}
 

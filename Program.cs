@@ -18,9 +18,9 @@ namespace perceptron
 //			ReverseTrainAndUseAnn(new StepPerceptron(), Utils.trainingInputSet, Utils.outputOR, 100);
 //			AssertTrainAndUseAnn(new StepPerceptron(), Utils.trainingInputSet, Utils.outputOR, 100);
 
-			OrderTrainAndUseAnn(new SigmoidPerceptron(), Utils.trainingInputSet, Utils.outputAND, 1000000);
+			OrderTrainAndUseAnn(new SigmoidPerceptron(), Utils.trainingInputSet, Utils.outputAND, 100);
 
-			OrderTrainAndUseAnn(new SigmoidPerceptron(), Utils.trainingInputSet, Utils.outputOR, 1000000);
+			OrderTrainAndUseAnn(new SigmoidPerceptron(), Utils.trainingInputSet, Utils.outputOR, 100);
 
 //			RandomTrainAndUseAnn(new BiasedPerceptron(), Utils.trainingInputSet, Utils.outputAND, 100);
 //			RandomTrainAndUseAnn(new BiasedPerceptron(), Utils.trainingInputSet, Utils.outputOR, 100);
