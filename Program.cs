@@ -18,9 +18,9 @@ namespace perceptron
 //			ReverseTrainAndUseAnn(new StepPerceptron(), Utils.trainingInputSet, Utils.outputOR, 100);
 //			AssertTrainAndUseAnn(new StepPerceptron(), Utils.trainingInputSet, Utils.outputOR, 100);
 
-			OrderTrainAndUseAnn(new SigmoidPerceptron(), Utils.trainingInputSet, Utils.outputAND, 100);
+//			OrderTrainAndUseAnn(new SigmoidPerceptron(), Utils.trainingInputSet, Utils.outputAND, 100);
 
-			OrderTrainAndUseAnn(new SigmoidPerceptron(), Utils.trainingInputSet, Utils.outputOR, 100);
+//			OrderTrainAndUseAnn(new SigmoidPerceptron(), Utils.trainingInputSet, Utils.outputOR, 100);
 
 //			RandomTrainAndUseAnn(new BiasedPerceptron(), Utils.trainingInputSet, Utils.outputAND, 100);
 //			RandomTrainAndUseAnn(new BiasedPerceptron(), Utils.trainingInputSet, Utils.outputOR, 100);
@@ -28,7 +28,7 @@ namespace perceptron
 //			RandomTrainAndUseAnn(new SigmoidXorGate(), Utils.trainingInputSet, Utils.outputXOR, 100);
 //			OrderTrainAndUseAnn(new SigmoidXorGate(), Utils.trainingInputSet, Utils.outputXOR, 100);
 //			
-//			AssertTrainAndUseAnn(new SigmoidXorGate(), Utils.trainingInputSet, Utils.outputXOR, 1000);
+			AssertTrainAndUseAnn(new SigmoidXorGate(), Utils.TrainingInputSet, Utils.OutputXor, 100000);
 
 //			AssertTrainAndUseAnn(new StepXorGate(), Utils.trainingInputSet, Utils.outputXOR, 100);
 
@@ -86,7 +86,7 @@ namespace perceptron
 			{
 				if (ann.Train(trainingInputSet[index], outputSet[index]))
 				{
-					Console.WriteLine("step: {0}\t index: {1}\t output:{2}", i, index, outputSet[index]);
+					Console.WriteLine("step: {0}\t |index: {1}\t |output:{2}", i, index, outputSet[index]);
 					index++;
 					if (index == trainingInputSet.Count)
 					{
